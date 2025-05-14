@@ -22,6 +22,10 @@ body {
   min-width: 100vw;
   min-height: 100vh;
   margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  padding: 20px;
 }
 
 main {
@@ -29,4 +33,9 @@ main {
 }
 main:has(.back-link) {
   text-align: center;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
 }

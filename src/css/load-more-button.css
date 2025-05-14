@@ -1,0 +1,20 @@
+.load-more {
+    display: block;
+    padding: 12px 24px;
+    margin: 30px auto;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.load-more:hover {
+    background-color: #218838;
+}
+
+.hidden {
+    display: none;
+}
