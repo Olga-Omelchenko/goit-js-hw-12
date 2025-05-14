@@ -1,17 +1,20 @@
+// src/render-functions.js
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
-const galleryContainer = document.querySelector('.gallery');
-const loader = document.querySelector('.loader');
+const galleryEl = document.querySelector('.gallery');
 const loadMoreBtn = document.querySelector('.load-more');
+const loader = document.querySelector('.loader');
 
-const lightbox = new SimpleLightbox('.gallery a', {
+let lightbox = new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
   captionDelay: 250,
 });
 
 export function createGallery(images) {
-  const markup = images.map(img => `
+  const markup = images
+    .map(
+      img => `
     <a href="${img.largeImageURL}" class="gallery-item">
       <img src="${img.webformatURL}" alt="${img.tags}" />
       <div class="info">
@@ -21,15 +24,16 @@ export function createGallery(images) {
         <p><strong>Downloads:</strong> ${img.downloads}</p>
       </div>
     </a>
-  `).join('');
+  `
+    )
+    .join('');
 
-  document.querySelector('.gallery').insertAdjacentHTML('beforeend', markup);
+  galleryEl.insertAdjacentHTML('beforeend', markup);
   lightbox.refresh();
 }
 
-
 export function clearGallery() {
-  galleryContainer.innerHTML = '';
+  galleryEl.innerHTML = '';
 }
 
 export function showLoader() {
