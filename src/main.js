@@ -22,10 +22,7 @@ let currentQuery = '';
 let totalImages = 0;
 let isLoading = false;
 
-if (!form || !gallery || !loadMoreBtn || !loader || !input) {
-  console.error('One or more essential elements are missing from the page.');
-  return;
-}
+
 
 form.addEventListener('submit', async e => {
   e.preventDefault();
